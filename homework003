@@ -1,0 +1,24 @@
+Создать два произвольных файла.
+Первому присвоить права на чтение и запись для владельца и группы, только на чтение — для всех.
+Второму присвоить права на чтение и запись только для владельца. Сделать это в численном и символьном виде.
+Назначить новых владельца и группу для директории целиком.
+  touch file1
+  touch file2
+  chmod u=rw,g=rw,o=r file1
+  chmod 600 file2
+
+Управление пользователями:
+* создать пользователя, используя утилиту useradd и adduser;
+* удалить пользователя, используя утилиту userdel.
+  sudo useradd -s /bin/bash -m -d /home/new_user1 new_user1
+  sudo adduser new_user2
+  sudo deluser new_user1
+
+Управление группами:
+создать группу с использованием утилит groupadd и addgroup;
+  sudo groupadd test_group1
+  sudo addgroup test_group2
+  sudo groupdel test_group1
+попрактиковаться в смене групп у пользователей;
+добавить пользователя в группу, не меняя основной;
+  sudo usermod -aG test_group2 new_user2
